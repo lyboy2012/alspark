@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>vue 基础回顾-技术点 | 🔥</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/alspark/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="技术点">
+
+<!-- Keywords -->
+<meta name="keywords" content="">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/alspark/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/alspark/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/alspark/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="🔥">
+<meta name="msapplication-starturl" content="https://lyboy2012.github.io/alspark">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="🔥">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="vue 基础回顾-技术点 | 🔥">
+<meta property="og:site_name" content="🔥">
+
+<meta property="og:locale" content="zh-cn">
+
+<meta property="og:url" content="https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/">
+<meta property="og:image" content="https://lyboy2012.github.io/alspark/img/suka-favicon.ico">
+
+<meta property="og:description" content="技术点">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-10-31T06:10:05.000Z">
+    <meta property="article:modified_time" content="2019-10-31T06:10:05.000Z">
+    <meta property="article:author" content="ly.boy2012@gmail.com">
+    <meta property="og:article:tag" content=""> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://lyboy2012.github.io/alspark/alspark/2019/10/31/vue-base2/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/",
+    "@type": "BlogPosting",
+    "logo": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/"
+    },
+    "headline": "vue 基础回顾-技术点 | 🔥",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-31T06:10:05.000Z",
+    "dateModified": "2019-10-31T06:10:05.294Z",
+    "author": {
+        "@type": "Person",
+        "name": "ly.boy2012@gmail.com",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/default_avatar.png"
+        },
+        "description": "Brothers, I'm back!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "🔥",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lyboy2012.github.io/alspark/search?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "技术点"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+            <!-- <div>来一段</div> -->
+        
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/alspark/">🔥</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Brothers, I'm back!
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/alspark/" class="navbar-link">Home</a>
+    
+    
+        <a href="/alspark/archives/" class="navbar-link">Archives</a>
+    
+    
+        <a href="/search" class="navbar-link">Search</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">Share</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=🔥&url=https://lyboy2012.github.io/alspark&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+        <li class="menu-item">
+            <a href="https://twitter.com/intent/tweet?text=🔥&url=https://lyboy2012.github.io/alspark&via=ly.boy2012@gmail.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+        </li>
+        
+
+        <!-- Share Facebook -->
+        
+        <li class="menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://lyboy2012.github.io/alspark" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+        </li>
+        
+
+        <!-- Share Google+ -->
+        
+        <li class="menu-item">
+            <a href="https://plus.google.com/share?url=https://lyboy2012.github.io/alspark" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+        </li>
+        
+
+        <!-- Share LinkedIn -->
+        
+        <li class="menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://lyboy2012.github.io/alspark&title=vue 基础回顾-技术点" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+        </li>
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=vue 基础回顾-技术点&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=https://lyboy2012.github.io/alspark&text=vue 基础回顾-技术点" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB20lEQVR42u3ayw6DMAxEUf7/p9ttH8nMmFRVMJdNK6rCQXJI7Ph4bHgcoECBAjVAHeJ4+4M4n1wnuQ+oPqhh0A3Of13k46YyiIP7gOqFGgWm+13BK9cBdT9U8uK0QQwK1CSgz0y6oO6JmgXp7IU5C/q/rBJAbY9KA3T182fZDKitUbboICZkNSCS4D9ddQG1NUoF4mwxN/vdfbcPCKoFKkkE0sKGezCXjIDqg3KFinRyVYUP9bIF1Q9VKVaoF6crnNmCCagWKFXYSiZbl6Am50D1QlUCVA2KtIimNjVB9UBVJlx30aRwqxYCoHqgXMFUTb6Vze9oAxNUC5RLGCsTsUO6YAfVB5VOxMlL021eygcG1QLliqYO5hooKg08oPqiXPGjUohNCrCgeqJU8mgX/EFS8JMCB6hLoFwQpws9lczKZMF1moG6LCopjK0kB9EAAtUK5ZprHDpqLp0kEqB6otKEM71B2ngTd8SCugzKHa5x3m0OqWR1ufkU1JaoZHMoKYQkRbS4AQfU5VFJUaOyUX1mwQeqH8o1BarAdk3Q8SACdRtUWryoNFkMCySgboNyCcNKM+ry6AO1Laq6mEsWb+XGClBtUMnGoWvccslsAgPVA7XTAQoUKFAvxxMtfVBvwHMA6AAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">vue 基础回顾-技术点</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/alspark/img/default_avatar.png" src="/alspark/img/suka-lazyload.gif" alt="ly.boy2012@gmail.com's Avatar">
+        <span>2019-10-31</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">Share the post</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=vue 基础回顾-技术点&url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">Share to Weibo</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+    <li class="menu-item">
+        <a href="https://twitter.com/intent/tweet?text=vue 基础回顾-技术点&url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/&via=ly.boy2012@gmail.com" target="_blank" rel="external noopener noreferrer nofollow">Share to Twitter</a>
+    </li>
+    
+
+    <!-- Share Facebook -->
+    
+    <li class="menu-item">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Facebook</a>
+    </li>
+    
+
+    <!-- Share Google+ -->
+    
+    <li class="menu-item">
+        <a href="https://plus.google.com/share?url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/" target="_blank" rel="external noopener noreferrer nofollow">Share to Google+</a>
+    </li>
+    
+
+    <!-- Share LinkedIn -->
+    
+    <li class="menu-item">
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/&title=🔥" target="_blank" rel="external noopener noreferrer nofollow">Share to LinkedIn</a>
+    </li>
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=🔥&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/" target="_blank" rel="external noopener noreferrer nofollow"> Share to QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base2/&text=🔥" target="_blank" rel="external noopener noreferrer nofollow">Share to Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB20lEQVR42u3ayw6DMAxEUf7/p9ttH8nMmFRVMJdNK6rCQXJI7Ph4bHgcoECBAjVAHeJ4+4M4n1wnuQ+oPqhh0A3Of13k46YyiIP7gOqFGgWm+13BK9cBdT9U8uK0QQwK1CSgz0y6oO6JmgXp7IU5C/q/rBJAbY9KA3T182fZDKitUbboICZkNSCS4D9ddQG1NUoF4mwxN/vdfbcPCKoFKkkE0sKGezCXjIDqg3KFinRyVYUP9bIF1Q9VKVaoF6crnNmCCagWKFXYSiZbl6Am50D1QlUCVA2KtIimNjVB9UBVJlx30aRwqxYCoHqgXMFUTb6Vze9oAxNUC5RLGCsTsUO6YAfVB5VOxMlL021eygcG1QLliqYO5hooKg08oPqiXPGjUohNCrCgeqJU8mgX/EFS8JMCB6hLoFwQpws9lczKZMF1moG6LCopjK0kB9EAAtUK5ZprHDpqLp0kEqB6otKEM71B2ngTd8SCugzKHa5x3m0OqWR1ufkU1JaoZHMoKYQkRbS4AQfU5VFJUaOyUX1mwQeqH8o1BarAdk3Q8SACdRtUWryoNFkMCySgboNyCcNKM+ry6AO1Laq6mEsWb+XGClBtUMnGoWvccslsAgPVA7XTAQoUKFAvxxMtfVBvwHMA6AAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#技术点"><span class="post-toc-number">1.</span> <span class="post-toc-text">技术点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vue-set-与this-set-区别"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Vue.set 与this.$set 区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vue-nextTick-callback"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Vue.nextTick(callback)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算属性-computed-和-methods-差别"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">计算属性(computed) 和 methods 差别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#watch监听属性应用场景"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">watch监听属性应用场景</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#key-管理可复用的元素"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">key-管理可复用的元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#v-bind-v-on-缩写"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">v-bind v-on 缩写</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#v-if-v-show-差别"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">v-if  v-show 差别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#v-if-与-v-for-优先级"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">v-if 与 v-for 优先级</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#v-for-通过-lt-template-gt-渲染多个子个元素"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">v-for 通过&lt;template&gt; 渲染多个子个元素</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模版解析-is-作用"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">模版解析 is 作用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#is-与-lt-component-gt-实现动态组件切换"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">is 与 &lt;component&gt; 实现动态组件切换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#keep-alive"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">keep-alive</span></a></li></ol></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h3 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h3><h4 id="Vue-set-与this-set-区别"><a href="#Vue-set-与this-set-区别" class="headerlink" title="Vue.set 与this.$set 区别"></a>Vue.set 与this.$set 区别</h4><ul>
+<li>Vue.set 设置实例创建之后添加的新的属性，（在data里未声明的属性）</li>
+<li>this.$set只能设置实例创建后存在的属性（在data里声明的属性）</li>
+</ul>
+<h4 id="Vue-nextTick-callback"><a href="#Vue-nextTick-callback" class="headerlink" title="Vue.nextTick(callback)"></a>Vue.nextTick(callback)</h4><p>  回调函数在 DOM 更新完成后就会调用，类似与react setState 回调；</p>
+<h4 id="计算属性-computed-和-methods-差别"><a href="#计算属性-computed-和-methods-差别" class="headerlink" title="计算属性(computed) 和 methods 差别"></a>计算属性(computed) 和 methods 差别</h4><p>  计算属性是基于它们的依赖进行缓存的,计算属性只有在它的相关依赖发生改变时才会重新求值,计算函数不会多次执行。</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Hello'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    <span class="comment">// 计算属性的 getter</span></span><br><span class="line">    reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  reversedMessage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="watch监听属性应用场景"><a href="#watch监听属性应用场景" class="headerlink" title="watch监听属性应用场景"></a>watch监听属性应用场景</h4><p>  当需要在数据变化时执行异步或开销较大的操作时；</p>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> watchExampleVM = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#watch-example'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    question: <span class="string">''</span>,</span><br><span class="line">    answer: <span class="string">'I cannot give you an answer until you ask a question!'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="comment">// 如果 `question` 发生改变，这个函数就会运行</span></span><br><span class="line">    question: <span class="function"><span class="keyword">function</span> (<span class="params">newQuestion</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.answer = <span class="string">'Waiting for you to stop typing...'</span></span><br><span class="line">      <span class="keyword">this</span>.getAnswer()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// `_.debounce` 是一个通过 Lodash 限制操作频率的函数。</span></span><br><span class="line">    <span class="comment">// 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率</span></span><br><span class="line">    <span class="comment">// AJAX 请求直到用户输入完毕才会发出。想要了解更多关于</span></span><br><span class="line">    <span class="comment">// `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，</span></span><br><span class="line">    <span class="comment">// 请参考：https://lodash.com/docs#debounce</span></span><br><span class="line">    getAnswer: _.debounce(</span><br><span class="line">      <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.question.indexOf(<span class="string">'?'</span>) === <span class="number">-1</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>.answer = <span class="string">'Questions usually contain a question mark. ;-)'</span></span><br><span class="line">          <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.answer = <span class="string">'Thinking...'</span></span><br><span class="line">        <span class="keyword">var</span> vm = <span class="keyword">this</span></span><br><span class="line">        axios.get(<span class="string">'https://yesno.wtf/api'</span>)</span><br><span class="line">          .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">            vm.answer = _.capitalize(response.data.answer)</span><br><span class="line">          &#125;)</span><br><span class="line">          .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">            vm.answer = <span class="string">'Error! Could not reach the API. '</span> + error</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="comment">// 这是我们为判定用户停止输入等待的毫秒数</span></span><br><span class="line">      <span class="number">500</span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></code></pre><h4 id="key-管理可复用的元素"><a href="#key-管理可复用的元素" class="headerlink" title="key-管理可复用的元素"></a>key-管理可复用的元素</h4><p>  <a href="https://cn.vuejs.org/v2/guide/conditional.html#用-key-管理可复用的元素" target="_blank" rel="noopener">官网说明</a><br>         以下实例，不用key 相同元素会缓存placeholder  咋感觉是vue bug :(</p>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--以下对比示例--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-if</span>=<span class="string">"loginType === 'username'"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your username"</span> <span class="attr">key</span>=<span class="string">"username-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">placeholder</span>=<span class="string">"Enter your email address"</span> <span class="attr">key</span>=<span class="string">"email-input"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre><h4 id="v-bind-v-on-缩写"><a href="#v-bind-v-on-缩写" class="headerlink" title="v-bind v-on 缩写"></a>v-bind v-on 缩写</h4><p>  <a href="https://cn.vuejs.org/v2/guide/syntax.html#%E7%BC%A9%E5%86%99" target="_blank" rel="noopener">官网说明</a></p>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-bind:href</span>=<span class="string">"url"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">:href</span>=<span class="string">"url"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 完整语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">"doSomething"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 缩写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click</span>=<span class="string">"doSomething"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre><h4 id="v-if-v-show-差别"><a href="#v-if-v-show-差别" class="headerlink" title="v-if  v-show 差别"></a>v-if  v-show 差别</h4><ul>
+<li><p>v-if dom 切换 ，v-show  display:none;</p>
+</li>
+<li><p>v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。</p>
+<p>使用场景： 如果需要非常频繁地切换，则使用 v-show 较好；<br>如果在运行时条件很少改变，则使用 v-if 较好。</p>
+</li>
+</ul>
+<h4 id="v-if-与-v-for-优先级"><a href="#v-if-与-v-for-优先级" class="headerlink" title="v-if 与 v-for 优先级"></a>v-if 与 v-for 优先级</h4><p>  v-for 的优先级比 v-if 更高;    </p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span> <span class="attr">v-if</span>=<span class="string">"!todo.isComplete"</span>&gt;</span></span><br><span class="line">  &#123;&#123; todo &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>以上代码仅渲染未完成的 todos</strong></p>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">v-if</span>=<span class="string">"todos.length"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"todo in todos"</span>&gt;</span></span><br><span class="line">     &#123;&#123; todo &#125;&#125;</span><br><span class="line">   <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>&gt;</span>No todos left!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+todos 长度大于0执行v-for</code></pre><h4 id="v-for-通过-lt-template-gt-渲染多个子个元素"><a href="#v-for-通过-lt-template-gt-渲染多个子个元素" class="headerlink" title="v-for 通过&lt;template&gt; 渲染多个子个元素"></a>v-for 通过&lt;template&gt; 渲染多个子个元素</h4><p>  相当于react fragment 短语法　&lt;&gt;</p>
+<pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123; item.msg &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"divider"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre><h4 id="模版解析-is-作用"><a href="#模版解析-is-作用" class="headerlink" title="模版解析 is 作用"></a>模版解析 is 作用</h4><p>  is目的：解决自定义组件中使用这些受限制的元素；<br>  DOM 作为模板时 &lt;ul&gt;、&lt;ol&gt;、&lt;table&gt;、&lt;select&gt; 内元素有限制；<br>  注意&lt;script type=”text/x-template”&gt;、.vue 组件、JavaScript 内联模板字符串、无此限制；</p>
+<ul>
+<li><p>问题代码：</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">my-row</span>&gt;</span>...<span class="tag">&lt;/<span class="name">my-row</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修复代码</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">is</span>=<span class="string">"my-row"</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span></span></span><br></pre></td></tr></table></figure></li>
+<li><p>for循环 应用<br>  在 &lt;ul&gt; 元素内只有 &lt;li&gt; 元素有效，要is=”todo-item”,避开一些潜在的浏览器解析 指令for 、bind、 on 错误</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;todo-list-example&quot;&gt;</span><br><span class="line">  &lt;input</span><br><span class="line">    v-model=&quot;newTodoText&quot;</span><br><span class="line">    v-on:keyup.enter=&quot;addNewTodo&quot;</span><br><span class="line">    placeholder=&quot;Add a todo&quot;</span><br><span class="line">  &gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li</span><br><span class="line">      is=&quot;todo-item&quot; &lt;!--此行代码关键--&gt;</span><br><span class="line">      v-for=&quot;(todo, index) in todos&quot;</span><br><span class="line">      :key=&quot;todo.id&quot;</span><br><span class="line">      :title=&quot;todo.title&quot;</span><br><span class="line">      @remove=&quot;todos.splice(index, 1)&quot;</span><br><span class="line">    &gt;&lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="is-与-lt-component-gt-实现动态组件切换"><a href="#is-与-lt-component-gt-实现动态组件切换" class="headerlink" title="is 与 &lt;component&gt; 实现动态组件切换"></a>is 与 &lt;component&gt; 实现动态组件切换</h4>  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#example'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    currentView: <span class="string">'home'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    home: &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line">    posts: &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line">    archive: &#123; <span class="comment">/* ... */</span> &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">v-bind:is</span>=<span class="string">"currentView"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 组件在 vm.currentview 变化时改变 成 home posts archive 组件！ --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h4><p>  切换组件避免组件重复渲染，保留在内存</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"currentView"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 非活动组件将被缓存！ --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">This article was last updated on <span id="date-expire-num"></span> days ago, and the information described in the article may have changed.</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-10-31");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">Published at&nbsp;<time datetime="2019-10-31T06:10:05.000Z" itemprop="datePublished">2019-10-31</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/alspark/2019/10/31/vue-base/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">vue 基础回顾-基础概念</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="https://lyboy2012.github.io/alspark">🔥</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/alspark/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
