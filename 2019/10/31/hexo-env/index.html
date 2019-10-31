@@ -264,7 +264,7 @@ window.oldVersion = [
     },
     
     "datePublished": "2019-10-31T01:56:09.000Z",
-    "dateModified": "2019-10-31T07:09:13.361Z",
+    "dateModified": "2019-10-31T07:21:02.323Z",
     "author": {
         "@type": "Person",
         "name": "ly.boy2012@gmail.com",
@@ -533,8 +533,9 @@ window.oldVersion = [
 <li><p>在目录source下新增search.md</p>
 </li>
 <li><p>search.md 录入以下内容</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Search</span><br><span class="line">date:</span><br><span class="line">layout: search</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Search</span><br><span class="line">date:</span><br><span class="line">layout: search</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li><p>修改项目根目录下_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">suka_theme:</span><br><span class="line">  search:</span><br><span class="line">    enable: true # 新增此项</span><br><span class="line">    path: search.json</span><br><span class="line">    field: post # Page | Post | All. Default post</span><br><span class="line">  prism:</span><br><span class="line">    enable: false</span><br><span class="line">    line_number: true</span><br><span class="line">    theme: default</span><br></pre></td></tr></table></figure></li>
 <li><p>修改themes/suka/目录下_config.yml search link 地址</p>
 <p>如果上面提的PRO_NAME存在,就拼接上</p>
 <pre><code>nav:
