@@ -267,7 +267,7 @@ window.oldVersion = [
     },
     
     "datePublished": "2019-10-31T01:56:09.000Z",
-    "dateModified": "2019-10-31T07:21:02.323Z",
+    "dateModified": "2019-10-31T12:55:22.187Z",
     "author": {
         "@type": "Person",
         "name": "ly.boy2012@gmail.com",
@@ -470,7 +470,7 @@ window.oldVersion = [
                     
                         
                             <div id="post-toc">
-                                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本搭建流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本搭建流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#install"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">install</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#deploy-to-github"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">deploy to github</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#install-themes"><span class="post-toc-number">3.</span> <span class="post-toc-text">install themes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开发调试"><span class="post-toc-number">4.</span> <span class="post-toc-text">开发调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#draft-草稿"><span class="post-toc-number">5.</span> <span class="post-toc-text">draft 草稿</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索配置"><span class="post-toc-number">6.</span> <span class="post-toc-text">搜索配置</span></a></li></ol>
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本搭建流程"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本搭建流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#install"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">install</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#deploy-to-github"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">deploy to github</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#install-themes"><span class="post-toc-number">3.</span> <span class="post-toc-text">install themes</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开发调试"><span class="post-toc-number">4.</span> <span class="post-toc-text">开发调试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#draft-草稿"><span class="post-toc-number">5.</span> <span class="post-toc-text">draft 草稿</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#搜索配置"><span class="post-toc-number">6.</span> <span class="post-toc-text">搜索配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新增评论功能"><span class="post-toc-number">7.</span> <span class="post-toc-text">新增评论功能</span></a></li></ol>
                             </div>
                         
                     
@@ -530,21 +530,24 @@ window.oldVersion = [
 <li><p>search.md 录入以下内容</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Search</span><br><span class="line">date:</span><br><span class="line">layout: search</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
 <li><p>修改项目根目录下_config.yml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">suka_theme:</span><br><span class="line">  search:</span><br><span class="line">    enable: true # 新增此项</span><br><span class="line">    path: search.json</span><br><span class="line">    field: post # Page | Post | All. Default post</span><br><span class="line">  prism:</span><br><span class="line">    enable: false</span><br><span class="line">    line_number: true</span><br><span class="line">    theme: default</span><br></pre></td></tr></table></figure></li>
-<li><p>修改themes/suka/目录下_config.yml search link 地址</p>
-<p>如果上面提的PRO_NAME存在,就拼接上</p>
-<pre><code>nav:
-  home:
-    use: true
-  archives:
-    use: true
-  rss:
-    use: false
-  share:
-    use: true
-  search:
-    use: true
-    link: /PRO_NAME/search.html</code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">suka_theme:</span><br><span class="line">  search:</span><br><span class="line">    enable: true # 新增此项</span><br><span class="line">    path: search.json</span><br><span class="line">    field: post # Page | Post | All. Default post</span><br><span class="line">  prism:</span><br><span class="line">    enable: false</span><br><span class="line">    line_number: true</span><br><span class="line">    theme: default</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改themes/suka/目录下_config.yml search link 地址<br>如果上面提的PRO_NAME存在,就拼接上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nav:  </span><br><span class="line">   search:</span><br><span class="line">     use: true</span><br><span class="line">     link: /PRO_NAME/search.html</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="新增评论功能"><a href="#新增评论功能" class="headerlink" title="新增评论功能"></a>新增评论功能</h3><p>  思路：通过github gitalk 实现评论，gitalk 是一个基于 Github Issue 和 Preact 开发的评论插件；<br>  gittalk 需要先创建applications 通过applications 来使用GitHub提供的 OAuth 服务，来实现登授权 </p>
+<p>  <a href="https://theme-suka.skk.moe/docs/service/" target="_blank" rel="noopener">官网参考链接</a></p>
+<ul>
+<li><p>新建github applications<br>新建地址<a href="https://github.com/settings/applications/new" target="_blank" rel="noopener">https://github.com/settings/applications/new</a></p>
+<img src="/alspark/2019/10/31/hexo-env/applications.png" class="" title="new gith applications">
+</li>
+<li><p>配置 github applications 信息</p>
+<img src="/alspark/2019/10/31/hexo-env/applications-info.png" class="" title="new gith applications">
+</li>
+<li><p>配置 themes/suka 下 _config.yml </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">comment:</span><br><span class="line">  use: gitalk</span><br><span class="line">  ...</span><br><span class="line">  gitalk:</span><br><span class="line">    repo: alspark # 存放评论的 issue 所在的 repo name</span><br><span class="line">    owner: xxx # 持有该 repo 的 GitHub user</span><br><span class="line">    client_id: xxx</span><br><span class="line">    client_secret: xxx</span><br></pre></td></tr></table></figure></li>
 </ul>
 
                     </article>
