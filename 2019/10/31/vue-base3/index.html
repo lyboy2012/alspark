@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>vue 基础回顾-技术点之组件 | 🔥</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/alspark/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="组件注册方式  全局注册
+
+全局
+">
+
+<!-- Keywords -->
+<meta name="keywords" content="">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/alspark/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/alspark/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/alspark/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="🔥">
+<meta name="msapplication-starturl" content="https://lyboy2012.github.io/alspark">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="🔥">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="vue 基础回顾-技术点之组件 | 🔥">
+<meta property="og:site_name" content="🔥">
+
+<meta property="og:locale" content="zh-CN">
+
+<meta property="og:url" content="https://lyboy2012.github.io/alspark/2019/10/31/vue-base3/">
+<meta property="og:image" content="https://lyboy2012.github.io/alspark/img/suka-favicon.ico">
+
+<meta property="og:description" content="组件注册方式  全局注册
+
+全局
+">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-10-31T09:10:23.000Z">
+    <meta property="article:modified_time" content="2019-10-31T09:10:23.000Z">
+    <meta property="article:author" content="ly.boy2012@gmail.com">
+    <meta property="og:article:tag" content=""> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://lyboy2012.github.io/alspark/alspark/2019/10/31/vue-base3/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "https://lyboy2012.github.io/alspark/2019/10/31/vue-base3/",
+    "@type": "BlogPosting",
+    "logo": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyboy2012.github.io/alspark/2019/10/31/vue-base3/"
+    },
+    "headline": "vue 基础回顾-技术点之组件 | 🔥",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-10-31T09:10:23.000Z",
+    "dateModified": "2019-10-31T09:10:23.964Z",
+    "author": {
+        "@type": "Person",
+        "name": "ly.boy2012@gmail.com",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/default_avatar.png"
+        },
+        "description": "Brothers, I'm back!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "🔥",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lyboy2012.github.io/alspark/alspark/search.html?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "组件注册方式  全局注册
+
+全局
+"
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+            <!-- <div>来一段</div> -->
+        
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/alspark/">🔥</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Brothers, I'm back!
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/alspark/" class="navbar-link">首页</a>
+    
+    
+        <a href="/alspark/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/alspark/search.html" class="navbar-link">搜索</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=🔥&url=https://lyboy2012.github.io/alspark&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=vue 基础回顾-技术点之组件&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+        <li class="menu-item">
+            <a href="https://t.me/share/url?url=https://lyboy2012.github.io/alspark&text=vue 基础回顾-技术点之组件" target="_blank" rel="external noopener noreferrer nofollow">分享到 Telegram</a>
+        </li>
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB20lEQVR42u3ay07EMBBE0fn/n4YNC0B2VfUEIadyswEyGecgtV/dfn0ceL1AgQIFaoF6iWv3zI+Gvv527UTvAVWDWgbd4v4Oq9qZvAdUF2oVmLsAXQFXneJ3O+pzUM9CrT5fPSODGBQog5lMuqCeidoFaRrc/7pKAHU8Kg3Qqz//bDcD6miUTTqIRnYdIt1MvJ11AXU0ym0QdgPl7nP1u/rnQPWhXIAmiY0k8aaScKA6UNOGkw2CGjTVc6A6UMkkql46SZzZQgGoKpRL1rugT77jOgKoDlQywU6edUm0XWcA1YNKvpA2qgqVaiMLqgs1SbBOJuOkA9isC6hbotyGUU2+VxeIUcUB1O1Q6UI/6RBug+EWhqA6UK4A7QqIKtnvCtrxKgHU7VAumeXuTwqa44oDqNuhkoLjdGE37RygulDJZiA+7CACOuoooGpQ6SGtZGBVSQ/VgUB1otIF23QxlyRLQHWikkkzfUF68CYePEHdBuUud2DLFYfcwUJQfah08aaSsW4STje9oHpQ7vDVO4u56YIPVB/KJWTTSddtTEengkDVolSgugE4HYhBPQvlNpRXDqNe6n2gjkZNCkFJgiO5B6oXlRQO0+B3CQ45MIOqQJ10gQIFCtS36xOi6BCvQQ4gTAAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">vue 基础回顾-技术点之组件</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/alspark/img/default_avatar.png" src="/alspark/img/suka-lazyload.gif" alt="ly.boy2012@gmail.com's Avatar">
+        <span>2019-10-31</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=vue 基础回顾-技术点之组件&url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base3/&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=🔥&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base3/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+    <li class="menu-item">
+        <a href="https://t.me/share/url?url=https://lyboy2012.github.io/alspark/2019/10/31/vue-base3/&text=🔥" target="_blank" rel="external noopener noreferrer nofollow">分享到 Telegram</a>
+    </li>
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB20lEQVR42u3ay07EMBBE0fn/n4YNC0B2VfUEIadyswEyGecgtV/dfn0ceL1AgQIFaoF6iWv3zI+Gvv527UTvAVWDWgbd4v4Oq9qZvAdUF2oVmLsAXQFXneJ3O+pzUM9CrT5fPSODGBQog5lMuqCeidoFaRrc/7pKAHU8Kg3Qqz//bDcD6miUTTqIRnYdIt1MvJ11AXU0ym0QdgPl7nP1u/rnQPWhXIAmiY0k8aaScKA6UNOGkw2CGjTVc6A6UMkkql46SZzZQgGoKpRL1rugT77jOgKoDlQywU6edUm0XWcA1YNKvpA2qgqVaiMLqgs1SbBOJuOkA9isC6hbotyGUU2+VxeIUcUB1O1Q6UI/6RBug+EWhqA6UK4A7QqIKtnvCtrxKgHU7VAumeXuTwqa44oDqNuhkoLjdGE37RygulDJZiA+7CACOuoooGpQ6SGtZGBVSQ/VgUB1otIF23QxlyRLQHWikkkzfUF68CYePEHdBuUud2DLFYfcwUJQfah08aaSsW4STje9oHpQ7vDVO4u56YIPVB/KJWTTSddtTEengkDVolSgugE4HYhBPQvlNpRXDqNe6n2gjkZNCkFJgiO5B6oXlRQO0+B3CQ45MIOqQJ10gQIFCtS36xOi6BCvQQ4gTAAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#组件注册方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">组件注册方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Prop-验证"><span class="post-toc-number">2.</span> <span class="post-toc-text">Prop 验证</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#组件-data-必须是函数"><span class="post-toc-number">3.</span> <span class="post-toc-text">组件 data 必须是函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#组件组合（组件嵌套）"><span class="post-toc-number">4.</span> <span class="post-toc-text">组件组合（组件嵌套）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单向数据流"><span class="post-toc-number">5.</span> <span class="post-toc-text">单向数据流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#两种特殊场景"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">两种特殊场景</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#单向数据流引起reRender讨论"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">单向数据流引起reRender讨论</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sync-修饰符"><span class="post-toc-number">6.</span> <span class="post-toc-text">.sync 修饰符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义事件"><span class="post-toc-number">7.</span> <span class="post-toc-text">自定义事件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义组件的-v-model"><span class="post-toc-number">8.</span> <span class="post-toc-text">自定义组件的 v-model</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h4 id="组件注册方式"><a href="#组件注册方式" class="headerlink" title="组件注册方式"></a>组件注册方式</h4><p>  全局注册</p>
+<ul>
+<li><p>全局</p>
+<ul>
+<li>在注册之后可用在任何新创建的 Vue 根实例 (new Vue) 的模板中；</li>
+<li>在所有子组件中也是如此，也就是说这全局注册组件在各自内部也都可以相互使用；</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  <span class="comment">// 选项</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>局部</p>
+<ul>
+<li><p>全局注册回导致webpack 打包在不使用也会打包；</p>
+</li>
+<li><p>局部注册的组件在其子组件中使用；</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Child = &#123;</span><br><span class="line">  template: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  components: &#123;</span><br><span class="line">    <span class="comment">// &lt;my-component&gt; 将只在父组件模板中可用</span></span><br><span class="line">    <span class="string">'my-component'</span>: Child</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Prop-验证"><a href="#Prop-验证" class="headerlink" title="Prop 验证"></a>Prop 验证</h4><p>  对应react PropTypes</p>
+<ul>
+<li><p>react</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// ... do things with the props</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyComponent.propTypes = &#123;</span><br><span class="line">  <span class="comment">// You can declare that a prop is a specific JS primitive. By default, these</span></span><br><span class="line">  <span class="comment">// are all optional.</span></span><br><span class="line">  optionalArray: PropTypes.array,</span><br><span class="line">  optionalBool: PropTypes.bool,</span><br><span class="line">  optionalFunc: PropTypes.func,</span><br><span class="line">  optionalNumber: PropTypes.number,</span><br><span class="line">  optionalObject: PropTypes.object,</span><br><span class="line">  optionalString: PropTypes.string,</span><br><span class="line">  optionalSymbol: PropTypes.symbol,</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'example'</span>, &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    <span class="comment">// 基础类型检测 (`null` 指允许任何类型)</span></span><br><span class="line">    propA: <span class="built_in">Number</span>,</span><br><span class="line">    <span class="comment">// 可能是多种类型</span></span><br><span class="line">    propB: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span><br><span class="line">    <span class="comment">// 必传且是字符串</span></span><br><span class="line">    propC: &#123;</span><br><span class="line">      type: <span class="built_in">String</span>,</span><br><span class="line">      required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 数值且有默认值</span></span><br><span class="line">    propD: &#123;</span><br><span class="line">      type: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="number">100</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 数组/对象的默认值应当由一个工厂函数返回</span></span><br><span class="line">    propE: &#123;</span><br><span class="line">      type: <span class="built_in">Object</span>,</span><br><span class="line">      <span class="keyword">default</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">message</span>: <span class="string">'hello'</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 自定义验证函数</span></span><br><span class="line">    propF: &#123;</span><br><span class="line">      validator: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> value &gt; <span class="number">10</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p> type 可以是下面原生构造器：</p>
+<pre><code>  原生构造器
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String</span><br><span class="line">Number</span><br><span class="line">Boolean</span><br><span class="line">Function</span><br><span class="line">Object</span><br><span class="line">Array</span><br><span class="line">Symbol</span><br><span class="line">type</span><br></pre></td></tr></table></figure>
+构造函数：也可以是一个自定义构造器函数，使用 instanceof 检测。</code></pre></li>
+</ul>
+<h4 id="组件-data-必须是函数"><a href="#组件-data-必须是函数" class="headerlink" title="组件 data 必须是函数"></a>组件 data 必须是函数</h4><ul>
+<li><p>定义组件实际是创建个组件的构造器；</p>
+</li>
+<li><p>注册组件是建立一个组件构造器的引用；</p>
+</li>
+<li><p>使用组件才是真正创建组件实例；</p>
+<p>定义组件 data 必须是函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;div&gt;It'</span>s me!<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><span class="string">',</span></span><br><span class="line"><span class="string">  data() &#123;</span></span><br><span class="line"><span class="string">    return &#123;&#125; </span></span><br><span class="line"><span class="string">  &#125;,</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p>new Vue 实例传入是个值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Hello Vue!'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>原理分析代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ComponentOne = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.data = <span class="keyword">this</span>.data()</span><br><span class="line">&#125;</span><br><span class="line">ComponentOne.prototype.data = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> ComponentTwo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.data = <span class="keyword">this</span>.data()</span><br><span class="line">&#125;</span><br><span class="line">ComponentTwo.prototype.data = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> one = <span class="keyword">new</span> ComponentOne();</span><br><span class="line"><span class="keyword">var</span> two = <span class="keyword">new</span> ComponentTwo();</span><br><span class="line">one.data !== two.data</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h4 id="组件组合（组件嵌套）"><a href="#组件组合（组件嵌套）" class="headerlink" title="组件组合（组件嵌套）"></a>组件组合（组件嵌套）</h4><ul>
+<li>父子组件关系： prop 向下传递(单向数据流)，事件向上传递 ；</li>
+<li>父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息；</li>
+<li>prop 向下传递，是单向数据流向，每次父组件更新时，子组件的所有 prop 都会更新为最新值，不应该在子组件内部改变 prop。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'child'</span>, &#123;</span><br><span class="line">  <span class="comment">// 声明 props</span></span><br><span class="line">  props: [<span class="string">'myMessage'</span>],</span><br><span class="line">  <span class="comment">// 就像 data 一样，prop 也可以在模板中使用</span></span><br><span class="line">  <span class="comment">// 同样也可以在 vm 实例中通过 this.message 来使用</span></span><br><span class="line">  template: <span class="string">'&lt;span&gt;&#123;&#123; message &#125;&#125;&lt;/span&gt;'</span></span><br><span class="line">&#125;)</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;input v-model=<span class="string">"parentMsg"</span>&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;child :my-message=<span class="string">"parentMsg"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+说明：HTML 特性是不区分大小写的，当使用的不是字符串模板时，camelCase (驼峰式命名) 的 prop 需转换为相对应的 kebab-case (短横线分隔式命名)；</li>
+</ul>
+<h4 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h4><h5 id="两种特殊场景"><a href="#两种特殊场景" class="headerlink" title="两种特殊场景"></a>两种特殊场景</h5><p>  (其实可以认为是一种)</p>
+<ul>
+<li><p>prop 初始值做为子组件data </p>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'initialCounter'</span>],</span><br><span class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; <span class="attr">counter</span>: <span class="keyword">this</span>.initialCounter &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre></li>
+<li><p>prop 初始值做为子组件加工后的数据(computed)</p>
+<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'size'</span>],</span><br><span class="line">computed: &#123;</span><br><span class="line">  normalizedSize: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size.trim().toLowerCase()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h5 id="单向数据流引起reRender讨论"><a href="#单向数据流引起reRender讨论" class="headerlink" title="单向数据流引起reRender讨论"></a>单向数据流引起reRender讨论</h5><ul>
+<li><p>diff 在个框架 差别</p>
+<ul>
+<li>react: diff dom，但是不 diff 数据</li>
+<li>vue: diff 数据（其实不能叫 diff，而是通过对更改的劫持，自动获得了 diff），也      diff dom（其实可以不 diff，它这个机制，其实用不到 vdom）</li>
+<li>angular: diff 数据，但是不 diff dom</li>
+<li>cycle: diff dom，但不 diff 数据</li>
+</ul>
+</li>
+<li><p>数据与视图更新关系</p>
+<ul>
+<li><p>react: 数据变化之后，用户通过 setState 主动通知框架更新视图 ，通过shouldComponentUpdate PureComponent 来优化rerender；</p>
+</li>
+<li><p>vue：数据变化之后，框架通过对原生对象和数组类型变更方法的劫持自动发现更新的部分，刷新视图，用户没有手动过程</p>
+</li>
+<li><p>angular: 1.x 数据变化之后，通过 $digest 主动通知框架更新视图（框架劫持了大部分异步行为，自动做这个事情）2 以后版本，changeDetection 允许两种模式，自动和手动自动：基于 zone.js，原理与 1.x 的 $digest 相同手动：数据变化之后，用户手动调用 cd，通知框架更新视图另外，可以通过内置的 rxjs 的 observable，接管一切异步行为，并在订阅</p>
+</li>
+<li><p>cyclejs: 数据本身就在 stream 中，订阅直达 vdom，用户没有手动过程</p>
+<p>说明：react hooks shouldComponentUpdate <a href="https://stackoverflow.com/questions/56297351/how-to-use-shouldcomponentupdate-with-react-hooks" target="_blank" rel="noopener">stackoverflow</a>可以通过如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const Modal = React.memo(</span><br><span class="line">  props =&gt; &#123;...&#125;,</span><br><span class="line">  (prevProps, nextProps) =&gt; prevProps.show === nextProps.show</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="sync-修饰符"><a href="#sync-修饰符" class="headerlink" title=".sync 修饰符"></a>.sync 修饰符</h4><p>  （2.0 移除 2.3.0  再次引入）<strong>违背单向数据流，但用起来方便</strong><br>  sync的 prop 的值时，这个变化会同步到父组件中所绑定的值；</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">:foo.sync</span>=<span class="string">"bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>  等同于</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">:foo</span>=<span class="string">"bar"</span> @<span class="attr">update:foo</span>=<span class="string">"val =&gt; bar = val"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></span><br><span class="line"></span><br><span class="line">this.$emit('update:foo', newValue)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h4><p>  （子组件与父组件通信）<br>      目的： 子组件通过事件给父组件发送消息，解决不违背单向数据流通讯问题</p>
+<ul>
+<li><p>vue 实例实现事件接口</p>
+<ul>
+<li>$on(eventName) 监听事件</li>
+<li>$emit(eventName) 触发事件</li>
+</ul>
+<blockquote>
+<p>说明：$on 和 $emit 并不是addEventListener 和 dispatchEvent 的别名</p>
+</blockquote>
+</li>
+<li><p>父组件可以在使用子组件的地方直接用 v-on 来监听子组件触发的事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"counter-event-example"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; total &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button-counter</span> @<span class="attr">:increment</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button-counter</span> @<span class="attr">:increment</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'button-counter'</span>, &#123;</span><br><span class="line">  template: <span class="string">'&lt;button @:click="incrementCounter"&gt;&#123;&#123; counter &#125;&#125;&lt;/button&gt;'</span>,</span><br><span class="line">  data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      counter: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    incrementCounter: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.counter += <span class="number">1</span></span><br><span class="line">      <span class="keyword">this</span>.$emit(<span class="string">'increment'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#counter-event-example'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    total: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    incrementTotal: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.total += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="自定义组件的-v-model"><a href="#自定义组件的-v-model" class="headerlink" title="自定义组件的 v-model"></a>自定义组件的 v-model</h4><ul>
+<li><p>代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">custom-input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-model</span>=<span class="string">"something"</span></span></span><br><span class="line">&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure>
+
+<p>等同于下面语法糖</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">custom-input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:value</span>=<span class="string">"something"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:input</span>=<span class="string">"something = arguments[0]"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">custom-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完整示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;currency-input v-model=<span class="string">"price"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">currency-input</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">Vue.component(<span class="string">'currency-input'</span>, &#123;</span><br><span class="line">  template: <span class="string">'\</span></span><br><span class="line"><span class="string">    &lt;span&gt;\</span></span><br><span class="line"><span class="string">      $\</span></span><br><span class="line"><span class="string">      &lt;input\</span></span><br><span class="line"><span class="string">        ref="input"\</span></span><br><span class="line"><span class="string">        v-bind:value="value"\</span></span><br><span class="line"><span class="string">        v-on:input="updateValue($event.target.value)"\</span></span><br><span class="line"><span class="string">      &gt;\</span></span><br><span class="line"><span class="string">    &lt;/span&gt;\</span></span><br><span class="line"><span class="string">  '</span>,</span><br><span class="line">  props: [<span class="string">'value'</span>],</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="comment">// 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制</span></span><br><span class="line">    updateValue: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> formattedValue = value</span><br><span class="line">        <span class="comment">// 删除两侧的空格符</span></span><br><span class="line">        .trim()</span><br><span class="line">        <span class="comment">// 保留 2 位小数</span></span><br><span class="line">        .slice(</span><br><span class="line">          <span class="number">0</span>,</span><br><span class="line">          value.indexOf(<span class="string">'.'</span>) === <span class="number">-1</span></span><br><span class="line">            ? value.length</span><br><span class="line">            : value.indexOf(<span class="string">'.'</span>) + <span class="number">3</span></span><br><span class="line">        )</span><br><span class="line">      <span class="comment">// 如果值尚不合规，则手动覆盖为合规的值</span></span><br><span class="line">      <span class="keyword">if</span> (formattedValue !== value) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$refs.input.value = formattedValue</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 通过 input 事件带出数值</span></span><br><span class="line">      <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, <span class="built_in">Number</span>(formattedValue))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>自定义组件的 v-model，来解决如单选框、复选框之类的输入类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-checkbox&apos;, &#123;</span><br><span class="line">  model: &#123;</span><br><span class="line">    prop: &apos;checked&apos;,</span><br><span class="line">    event: &apos;change&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    checked: Boolean,</span><br><span class="line">    // 这样就允许拿 `value` 这个 prop 做其它事了</span><br><span class="line">    value: String</span><br><span class="line">  &#125;,</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;my-checkbox v-model=&quot;foo&quot; value=&quot;some value&quot;&gt;&lt;/my-checkbox&gt;</span><br></pre></td></tr></table></figure>
+<p>等价</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-checkbox</span><br><span class="line">  :checked=&quot;foo&quot;</span><br><span class="line">  @change=&quot;val =&gt; &#123; foo = val &#125;&quot;</span><br><span class="line">  value=&quot;some value&quot;&gt;</span><br><span class="line">&lt;/my-checkbox&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-10-31");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2019-10-31T09:10:23.000Z" itemprop="datePublished">2019-10-31</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+        <li class="page-item page-prev">
+            <a href="/alspark/2019/10/31/vue-base4/" rel="prev">
+                <div class="page-item-title"><i class="icon icon-back" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">vue 基础回顾-技术点之事件</div>
+            </a>
+        </li>
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/alspark/2019/10/31/vue-base2/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">vue 基础回顾-技术点</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="https://lyboy2012.github.io/alspark">🔥</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/alspark/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
