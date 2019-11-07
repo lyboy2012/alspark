@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>flutter 之基础环境 | 🔥</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/alspark/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="instal...">
+
+<!-- Keywords -->
+<meta name="keywords" content="">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/alspark/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/alspark/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/alspark/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="🔥">
+<meta name="msapplication-starturl" content="https://lyboy2012.github.io/alspark">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="🔥">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="flutter 之基础环境 | 🔥">
+<meta property="og:site_name" content="🔥">
+
+<meta property="og:locale" content="zh-CN">
+
+<meta property="og:url" content="https://lyboy2012.github.io/alspark/2019/11/07/flutter-base/">
+<meta property="og:image" content="https://lyboy2012.github.io/alspark/img/suka-favicon.ico">
+
+<meta property="og:description" content="instal...">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-11-07T14:44:02.000Z">
+    <meta property="article:modified_time" content="2019-11-07T14:44:02.000Z">
+    <meta property="article:author" content="ly.boy2012@gmail.com">
+    <meta property="og:article:tag" content=""> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://lyboy2012.github.io/alspark/alspark/2019/11/07/flutter-base/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "https://lyboy2012.github.io/alspark/2019/11/07/flutter-base/",
+    "@type": "BlogPosting",
+    "logo": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyboy2012.github.io/alspark/2019/11/07/flutter-base/"
+    },
+    "headline": "flutter 之基础环境 | 🔥",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-07T14:44:02.000Z",
+    "dateModified": "2019-11-07T14:44:02.040Z",
+    "author": {
+        "@type": "Person",
+        "name": "ly.boy2012@gmail.com",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/default_avatar.png"
+        },
+        "description": "Brothers, I'm back!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "🔥",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lyboy2012.github.io/alspark/alspark/search.html?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "instal..."
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+            <!-- <div>来一段</div> -->
+        
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/alspark/">🔥</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Brothers, I'm back!
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/alspark/" class="navbar-link">首页</a>
+    
+    
+        <a href="/alspark/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/alspark/search.html" class="navbar-link">搜索</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=🔥&url=https://lyboy2012.github.io/alspark&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=flutter 之基础环境&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB0klEQVR42u3awRKCMAyEYd7/pfWqTLvZUA5l+bmoqO3HTKFN0uOz4XGAAgUK1AB1iOPvD6dz5/fqO7cfUDmo4aA7NTa6CPX/WXvqPKgs1KwzNThHHc0GfdUPqHehRt8rxPDBCArUZIKdgd2bAtR7UNUE6twIqs1bVwmgtke5A3T19bZoBtTWKGfBrwZpd8DfknUBtTVqNRhVkE4boHJQnYWewjifVWABKgelJkxnMVf93r2BQOWgqkS9A1KBhnPhoDJR50ZmUHdgV8m2YT+gIlBqEu10VJ2rEiag8lFOkVEN4Aow/B2oCFSVtHAegncVxkHloNwCTzdIUBcpk/ugIlDO5OzcBFVhexZUgMpCVYmLblHJKVyCykW5k64KDKq2nMQ+qBzUlQ0P7gbmdlETVASqkyBzErPdABRUJqoqHl05pwKT6QQOKhalHnrOhuVOMRJUJqqT2FCD1g1Q7QkZ1CNRbkLVTYitFCdBZaC6CS97g5axkUdOyKAejaoGuLNpuRM4LO+IBfUIlLNJy0nUdwpO5coTVCzK2eTsJF3LzWOgXoNyGnSL2DLRBioK5UzIV5Kz1WaM5VUCqC1RTtHaSahWxcsyUAUVgdrpAAUKFKif4wtG42Bfo1HpxAAAAABJRU5ErkJggg==" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">flutter 之基础环境</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/alspark/img/default_avatar.png" src="/alspark/img/suka-lazyload.gif" alt="ly.boy2012@gmail.com's Avatar">
+        <span>2019-11-07</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=flutter 之基础环境&url=https://lyboy2012.github.io/alspark/2019/11/07/flutter-base/&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=🔥&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark/2019/11/07/flutter-base/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB0klEQVR42u3awRKCMAyEYd7/pfWqTLvZUA5l+bmoqO3HTKFN0uOz4XGAAgUK1AB1iOPvD6dz5/fqO7cfUDmo4aA7NTa6CPX/WXvqPKgs1KwzNThHHc0GfdUPqHehRt8rxPDBCArUZIKdgd2bAtR7UNUE6twIqs1bVwmgtke5A3T19bZoBtTWKGfBrwZpd8DfknUBtTVqNRhVkE4boHJQnYWewjifVWABKgelJkxnMVf93r2BQOWgqkS9A1KBhnPhoDJR50ZmUHdgV8m2YT+gIlBqEu10VJ2rEiag8lFOkVEN4Aow/B2oCFSVtHAegncVxkHloNwCTzdIUBcpk/ugIlDO5OzcBFVhexZUgMpCVYmLblHJKVyCykW5k64KDKq2nMQ+qBzUlQ0P7gbmdlETVASqkyBzErPdABRUJqoqHl05pwKT6QQOKhalHnrOhuVOMRJUJqqT2FCD1g1Q7QkZ1CNRbkLVTYitFCdBZaC6CS97g5axkUdOyKAejaoGuLNpuRM4LO+IBfUIlLNJy0nUdwpO5coTVCzK2eTsJF3LzWOgXoNyGnSL2DLRBioK5UzIV5Kz1WaM5VUCqC1RTtHaSahWxcsyUAUVgdrpAAUKFKif4wtG42Bfo1HpxAAAAABJRU5ErkJggg==" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#install-flutter-sdk"><span class="post-toc-number">1.</span> <span class="post-toc-text">install flutter sdk</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#检查-flutter-环境依赖"><span class="post-toc-number">2.</span> <span class="post-toc-text">检查 flutter 环境依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iOS-环境依赖"><span class="post-toc-number">3.</span> <span class="post-toc-text">iOS 环境依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vs-code-开发初体验"><span class="post-toc-number">4.</span> <span class="post-toc-text">vs code 开发初体验</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h3 id="install-flutter-sdk"><a href="#install-flutter-sdk" class="headerlink" title="install flutter sdk"></a>install flutter sdk</h3><p> flutter sdk 安装以mac 系统为例</p>
+<ul>
+<li><p>下载sdk压缩包<br> <a href="https://storage.flutter-io.cn/flutter_infra/releases/stable/macos/flutter_macos_v1.9.1+hotfix.6-stable.zip" target="_blank" rel="noopener">flutter_sdk_zip</a></p>
+<ul>
+<li><p>解压sdk zip包<br>解压zip 包到指定目录，可以根据喜好选择目录，以下为本人目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/liying/workspace/software</span><br></pre></td></tr></table></figure></li>
+<li><p>设置环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile # 打开bash_profile 添加环境变量配置</span><br><span class="line">export PATH=/Users/liying/workspace/software/flutter/bin:$PATH # 追加配置</span><br><span class="line">source  ~/.bash_profile # 使环境变量生效</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="检查-flutter-环境依赖"><a href="#检查-flutter-环境依赖" class="headerlink" title="检查 flutter 环境依赖"></a>检查 flutter 环境依赖</h3>  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
+<p>   可以根据提示安装少的依赖</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Doctor summary (to see all details, run flutter doctor -v):</span><br><span class="line">[✓] Flutter (Channel stable, v1.9.1+hotfix.6, on Mac OS X 10.15.1 19B88, locale</span><br><span class="line">    zh-Hans-CN)</span><br><span class="line"></span><br><span class="line">[!] Android toolchain - develop for Android devices (Android SDK version 28.0.3)</span><br><span class="line">    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor</span><br><span class="line">      --android-licenses</span><br><span class="line">[!] Xcode - develop for iOS and macOS (Xcode 11.2)</span><br><span class="line">    ✗ CocoaPods installed but not working.</span><br><span class="line">        You appear to have CocoaPods installed but it is not working.</span><br><span class="line">        This can happen if the version of Ruby that CocoaPods was installed with</span><br><span class="line">        is different from the one being used to invoke it.</span><br><span class="line">        This can usually be fixed by re-installing CocoaPods. For more info, see</span><br><span class="line">        https://github.com/flutter/flutter/issues/14293.</span><br><span class="line">      To re-install CocoaPods, run:</span><br><span class="line">        sudo gem install cocoapods</span><br><span class="line">[✓] Android Studio (version 3.5)</span><br><span class="line">[!] IntelliJ IDEA Ultimate Edition (version 2017.1.1)</span><br><span class="line">    ✗ Flutter plugin not installed; this adds Flutter specific functionality.</span><br><span class="line">    ✗ Dart plugin not installed; this adds Dart specific functionality.</span><br><span class="line">[✓] Connected device (1 available)</span><br></pre></td></tr></table></figure>
+<p>  CocoaPods 是什么？</p>
+<pre><code>CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.
+
+是个swift oc Cocoa 项目依赖管理(前端等价于 npm yarn 包管理工具)
+
+Cocoa是苹果公司为Mac OS X所创建的原生面向对象的API，是Mac OS X上五大API之一（其它四个是Carbon、POSIX、X11和Java）
+
+通过以下命令重新编译(直接通过))
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem install cocoapods</span><br></pre></td></tr></table></figure>
+
+也可以通过以下命令直接拉包（???咋感觉思路不太对，需要iOS 同学问问）
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.cocoapods/repos</span><br><span class="line">git clone https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git master</span><br></pre></td></tr></table></figure></code></pre><h3 id="iOS-环境依赖"><a href="#iOS-环境依赖" class="headerlink" title="iOS 环境依赖"></a>iOS 环境依赖</h3><ul>
+<li>iOS 环境依赖于xcode 下载最新版本xcode(比较坑系统也需要升级到最新版本) </li>
+</ul>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Running "flutter pub get" in uhome...                               1.6s</span><br><span class="line">Launching lib/main.dart on iPhone 11 Pro Max in debug mode...</span><br><span class="line">Warning: CocoaPods installed but not initialized. Skipping pod install.</span><br><span class="line">  CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.</span><br><span class="line">  Without CocoaPods, plugins will not work on iOS or macOS.</span><br><span class="line">  For more info, see https://flutter.dev/platform-plugins</span><br><span class="line">To initialize CocoaPods, run:</span><br><span class="line">  pod setup</span><br><span class="line">once to finalize CocoaPods' installation.</span><br><span class="line">Running Xcode build...</span><br><span class="line">Xcode build done.                                           81.5s</span><br><span class="line">Syncing files to device iPhone 11 Pro Max...</span><br></pre></td></tr></table></figure>
+
+<h3 id="vs-code-开发初体验"><a href="#vs-code-开发初体验" class="headerlink" title="vs code 开发初体验"></a>vs code 开发初体验</h3><ul>
+<li><p>安装flutter 插件</p>
+<p>shif+command+P</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Extensions: install Extensions</span><br></pre></td></tr></table></figure>
+<p>输入flutter 安装</p>
+</li>
+<li><p>reload window<br>shif+command+P</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Developer:reload Window</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证flutter 环境依赖<br>shif+command+P</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flutter: Run Flutter Docto</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>创建项目<br>shif+command+P</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flutter:New Project</span><br></pre></td></tr></table></figure>
+<p>输入项目名称： 以下划线小写规则</p>
+</li>
+<li><p>运行flutter 第一个项目</p>
+<p>vscode 选择个模拟器并启动<br>fn+F5 启动debug 模式 </p>
+</li>
+</ul>
+<p><strong><em>到此位置第一个demo就完成了 生息自己补脑吧</em></strong></p>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-11-07");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2019-11-07T14:44:02.000Z" itemprop="datePublished">2019-11-07</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/alspark/2019/10/31/vue-base4/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">vue 基础回顾-技术点之事件</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                        <div class="card-footer post-comment">
+                            <!-- Gitalk Container -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.3.3/dist/gitalk.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.3.3/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'ba5e2f66080546ac5361',
+            clientSecret: '397c2dcabfb2bdb5f66629947ab5c90c4f2ff898',
+            repo: 'alspark',
+            owner: 'lyboy2012',
+            admin: ['lyboy2012'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            id: window.location.pathname
+        })
+   gitalk.render('gitalk-container')
+</script>
+                        </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="https://lyboy2012.github.io/alspark">🔥</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/alspark/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
