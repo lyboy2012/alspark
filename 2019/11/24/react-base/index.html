@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © SukkaW
+        GitHub: https://github.com/SukkaW/hexo-theme-suka
+        Version: 1.3.3
+    -->
+    <script>
+window.lsVersion = "1.3.3",
+window.oldVersion = [
+    
+        
+            "0.2.0","0.0.1","0.1.0","1.0.0","1.0.1","1.1.0","1.1.1","1.2.0","1.3.0","1.3.2"
+        
+    
+]
+</script>
+
+    <!-- ### DNS Prefetch ### -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+<!-- busuanzi -->
+
+    <link rel="dns-prefetch" href="//busuanzi.ibruce.info">
+
+
+<!-- comment -->
+
+
+
+    <link rel="dns-prefetch" href="//api.github.com">
+    <link rel="dns-prefetch" href="//cors-anywhere.herokuapp.com">
+
+
+
+
+
+<!-- analytics -->
+
+
+
+
+
+
+
+
+    <!-- ### Preload ### -->
+    
+    <!-- Busuanzi -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" as="script">
+
+
+
+
+
+
+
+    <!-- ### Meta & Title & Info ### -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- Title -->
+<title>react 基础概念 | 🔥</title>
+
+<!-- favicon -->
+<!-- Favicons -->
+
+    <link rel="icon" type="image/ico" href="/alspark/img/suka-favicon.ico">
+
+
+
+
+
+
+<!-- Android Chrome Color -->
+
+
+
+<meta name="format-detection" content="telephone=no">
+
+<!-- Description -->
+<meta name="description" content="react 设计初衷  ">
+
+<!-- Keywords -->
+<meta name="keywords" content="">
+
+<!-- Disable Fucking Bloody Baidu Tranformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!-- ### Import File ### -->
+    
+        <!-- spectre.css -->
+
+    <link rel="stylesheet" href="/alspark/lib/spectre/spectre.min.css">
+
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    a, a:visited {
+        color: #0070ff;
+    }
+
+    a:active, a:focus, a:hover {
+        color: #0070ff;
+        opacity: .75;
+    }
+
+    #post-content a,
+    #post-content a:hover,
+    #post-content a:focus,
+    #post-content a:visited {
+        color: #005eb9;
+        opacity: 1;
+    }
+
+    .post-entry .card-body a {
+        color: #0070ff;
+    }
+
+    .avatar {
+        background: #444;
+    }
+
+    .navbar-link,
+    .navbar-link:visited,
+    .timeline .timeline-item .timeline-icon.icon-lg {
+        color: #0070ff;
+    }
+
+    .navbar-link:hover {
+        color: #0070ff;
+        opacity: .8;
+    }
+
+    #search-input .btn,
+    #disqus_click_btn,
+    #disqus-switch-to-direct,
+    #disqus-loadmore-button {
+        background: #727e96;
+        border-color: #727e96;
+        color: #fff;
+    }
+
+    #post-toc a.post-toc-link,
+    #post-toc a.post-toc-link:visited,
+    .share-menu.menu .menu-item>a {
+        color: #727e96;
+    }
+
+    .share-menu.menu .menu-item>a:hover,
+    .share-menu.menu .menu-item>a:focus,
+    .share-menu.menu .menu-item>a:visited {
+        color: #50596c;
+        background: #f8f9fa;
+        opacity: .85;
+    }
+</style>
+
+<!-- style.css -->
+
+    <link rel="stylesheet" href="/alspark/css/style.min.css">
+
+
+
+
+
+
+
+
+
+    <!-- Prettify Theme -->
+    
+    
+        <link rel="stylesheet" href="/alspark/css/highlight/github.min.css">
+    
+
+
+
+    
+
+    <!-- ### Site Verification ### -->
+    
+
+
+    <!-- ### RSS ### -->
+    
+
+    <!-- ### WebApp ### -->
+    <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="🔥">
+<meta name="msapplication-starturl" content="https://lyboy2012.github.io/alspark">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="🔥">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Manifest Import -->
+
+<!-- Open Search -->
+
+
+    <!-- ### The Open Graph & Twitter Card Protocol ### -->
+    <meta property="og:title" content="react 基础概念 | 🔥">
+<meta property="og:site_name" content="🔥">
+
+<meta property="og:locale" content="zh-CN">
+
+<meta property="og:url" content="https://lyboy2012.github.io/alspark/2019/11/24/react-base/">
+<meta property="og:image" content="https://lyboy2012.github.io/alspark/img/suka-favicon.ico">
+
+<meta property="og:description" content="react 设计初衷  ">
+
+<meta name="twitter:card" content="summary">
+
+
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2019-11-24T04:05:40.000Z">
+    <meta property="article:modified_time" content="2019-11-24T04:05:40.000Z">
+    <meta property="article:author" content="ly.boy2012@gmail.com">
+    <meta property="og:article:tag" content=""> 
+
+
+
+
+
+    <!-- ### Analytics ### -->
+    
+
+
+
+
+
+
+
+
+    <!-- ### Canonical link ### -->
+    <link rel="canonical" href="https://lyboy2012.github.io/alspark/alspark/2019/11/24/react-base/">
+
+    <!-- ### Structured Data ### -->
+    
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "url": "https://lyboy2012.github.io/alspark/2019/11/24/react-base/",
+    "@type": "BlogPosting",
+    "logo": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://lyboy2012.github.io/alspark/2019/11/24/react-base/"
+    },
+    "headline": "react 基础概念 | 🔥",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+    },
+    
+    "datePublished": "2019-11-24T04:05:40.000Z",
+    "dateModified": "2019-11-24T04:08:21.697Z",
+    "author": {
+        "@type": "Person",
+        "name": "ly.boy2012@gmail.com",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/default_avatar.png"
+        },
+        "description": "Brothers, I'm back!"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "🔥",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyboy2012.github.io/alspark/img/suka-favicon.ico"
+        }
+    },
+    
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lyboy2012.github.io/alspark/alspark/search.html?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    },
+    
+    "keywords": "",
+    "description": "react 设计初衷  "
+}
+</script>
+
+
+
+    <!-- ### Custom Head ### -->
+    
+            <!-- <div>来一段</div> -->
+        
+
+
+</head>
+
+    <body>
+        
+
+            
+
+            <!-- ### Main content ### -->
+            <!-- ## Header ##-->
+<header>
+    <h1 class="header-title text-center"><a href="/alspark/">🔥</a></h1>
+
+    <p class="text-center header-slogan">
+        
+            
+                Brothers, I'm back!
+            
+        
+    </p>
+
+    <nav class="navbar-section text-center">
+    
+        <a href="/alspark/" class="navbar-link">首页</a>
+    
+    
+        <a href="/alspark/archives/" class="navbar-link">归档</a>
+    
+    
+        <a href="/alspark/search.html" class="navbar-link">搜索</a>
+    
+    
+    
+        <div class="dropdown dropdown-right">
+    <a class="navbar-link dropdown-toggle" tabindex="0">分享</a>
+    <ul class="menu share-menu">
+
+        <!-- Share Weibo -->
+        
+        <li class="menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=🔥&url=https://lyboy2012.github.io/alspark&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+        </li>
+        
+
+        <!-- Share Twitter -->
+        
+
+        <!-- Share Facebook -->
+        
+
+        <!-- Share Google+ -->
+        
+
+        <!-- Share LinkedIn -->
+        
+
+        <!-- Share QQ -->
+        
+        <li class="menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=react 基础概念&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+        </li>
+        
+
+        <!-- Share Telegram -->
+        
+
+        <!-- QRCode -->
+        
+        <li class="menu-item">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB5UlEQVR42u3aS27EMAwE0bn/pZNVgAkgskvOBLDo8iaL2OO3oPVp6vV1w+slSpQoUQvUq7l+/v9+b/fcrxcsfqd7j6hZqGXRNQByX/d75fOiRqG6Aq8KvvowlkUM3iPqGagKV710dZ8oUR2qGzTp74l6Bqp6aTUwkoH031YJom6PIhuHT/z9+G5G1C1RMXQIm9NV4XeLxY+kLqJujUqLuDQoXi3yrRFd1HGobmGXiriDdpuP5aQtagSqupGEYdViLqFLrKgRqGqDkAo7hRv0YxA1D5VC1uojIKEt2ZSUGwdRR6PSxEyCizSQksBD1CxU13BMgyhtYMdmuKgRqCqkJ+EGORhBQlpRs1C7G85q8ibhf1wcihqDIg3rvwYhXbgrah6qKljSlEw4Gs6JmoVKjR1y2IYcJkzNI1FzUF1gtlOwXVPoUuoi6khUOmBDi51sarfSYVHHoq40GEnDKB62oStPUSNQVyfc2GSkhyVEHY1KzUca7O9OxlsjuqijUOlKBwRJIxI3mESNQF050IyC+vA8+vpEHYtKCzg6KO58AHEzKup4VFfgqaFIG5JbAYeosagUhnUb193mtqjnomgDe2dQFTUPRSdkGv6TAxSi5qLIpEkP2RAADs1EHYm60yVKlChRb9c3KeLg0Lq3RSIAAAAASUVORK5CYII=" alr="QRCode">
+        </li>
+        
+
+    </ul>
+</div>
+    
+    
+</nav>
+</header>
+
+            
+    <!-- ## Post ## -->
+    
+    
+
+
+<div class="post-container">
+    <div id="post-card" class="card">
+        
+        <div class="card-item-container">
+            <div class="card-inner-cell">
+                <!-- # Post Header Info # -->
+                <div class="card-header">
+                    
+    <h1 class="card-title h3 mb-2">react 基础概念</h1>
+
+
+
+
+<div class="post-header-info">
+    <p class="post-header-info-left text-gray">
+        <img class="author-thumb lazyload" data-src="/alspark/img/default_avatar.png" src="/alspark/img/suka-lazyload.gif" alt="ly.boy2012@gmail.com's Avatar">
+        <span>2019-11-24</span>
+        
+        
+            <!-- Busuanzi Post Views -->
+<span id="busuanzi_container_page_pv" hidden>
+    <span class="suka-devide-dot"></span>
+    <span></span>
+    <span id="busuanzi_value_page_pv"></span>
+    <span>Views</span>
+</span>
+        
+        
+    </p>
+    <div class="post-header-info-right">
+        
+            <div class="dropdown dropdown-right">
+<a class="dropdown-toggle" tabindex="0">分享本文</a>
+<ul class="menu share-menu">
+    <!-- Share Weibo -->
+    
+    <li class="menu-item">
+        <a href="http://service.weibo.com/share/share.php?appkey=&title=react 基础概念&url=https://lyboy2012.github.io/alspark/2019/11/24/react-base/&pic=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&searchPic=false&style=simple" target="_blank" rel="external noopener noreferrer nofollow">分享到微博</a>
+    </li>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+    <li class="menu-item">
+        <a href="http://connect.qq.com/widget/shareqq/index.html?site=🔥&title=🔥&summary=&pics=https://lyboy2012.github.io/alspark/img/suka-favicon.ico&url=https://lyboy2012.github.io/alspark/2019/11/24/react-base/" target="_blank" rel="external noopener noreferrer nofollow"> 分享到 QQ</a>
+    </li>
+    
+
+    <!-- Share Telegram -->
+    
+
+    <!-- QRCode -->
+    
+    <li class="menu-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAAAAABQV18IAAAB5UlEQVR42u3aS27EMAwE0bn/pZNVgAkgskvOBLDo8iaL2OO3oPVp6vV1w+slSpQoUQvUq7l+/v9+b/fcrxcsfqd7j6hZqGXRNQByX/d75fOiRqG6Aq8KvvowlkUM3iPqGagKV710dZ8oUR2qGzTp74l6Bqp6aTUwkoH031YJom6PIhuHT/z9+G5G1C1RMXQIm9NV4XeLxY+kLqJujUqLuDQoXi3yrRFd1HGobmGXiriDdpuP5aQtagSqupGEYdViLqFLrKgRqGqDkAo7hRv0YxA1D5VC1uojIKEt2ZSUGwdRR6PSxEyCizSQksBD1CxU13BMgyhtYMdmuKgRqCqkJ+EGORhBQlpRs1C7G85q8ibhf1wcihqDIg3rvwYhXbgrah6qKljSlEw4Gs6JmoVKjR1y2IYcJkzNI1FzUF1gtlOwXVPoUuoi6khUOmBDi51sarfSYVHHoq40GEnDKB62oStPUSNQVyfc2GSkhyVEHY1KzUca7O9OxlsjuqijUOlKBwRJIxI3mESNQF050IyC+vA8+vpEHYtKCzg6KO58AHEzKup4VFfgqaFIG5JbAYeosagUhnUb193mtqjnomgDe2dQFTUPRSdkGv6TAxSi5qLIpEkP2RAADs1EHYm60yVKlChRb9c3KeLg0Lq3RSIAAAAASUVORK5CYII=" alt="QRCode">
+    </li>
+    
+
+</ul>
+</div>
+        
+    </div>
+</div>
+                </div>
+                <div class="card-body">
+                    
+                        
+                            <div id="post-toc">
+                                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#react-设计初衷"><span class="post-toc-number">1.</span> <span class="post-toc-text">react 设计初衷</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Virtual-DOM-amp-diff"><span class="post-toc-number">2.</span> <span class="post-toc-text">Virtual DOM &amp; diff</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#组件-amp-属性"><span class="post-toc-number">3.</span> <span class="post-toc-text">组件&amp;属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#state-amp-生命周期"><span class="post-toc-number">4.</span> <span class="post-toc-text">state &amp; 生命周期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#JSX"><span class="post-toc-number">5.</span> <span class="post-toc-text">JSX</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#事件处理"><span class="post-toc-number">6.</span> <span class="post-toc-text">事件处理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#单向数据流"><span class="post-toc-number">7.</span> <span class="post-toc-text">单向数据流</span></a></li></ol>
+                            </div>
+                        
+                    
+                    <article id="post-content">
+                        <h4 id="react-设计初衷"><a href="#react-设计初衷" class="headerlink" title="react 设计初衷"></a>react 设计初衷</h4><p>  <a href="https://github.com/reactjs/react-basic" target="_blank" rel="noopener">英文链接</a> <a href="https://github.com/react-guide/react-basic" target="_blank" rel="noopener">中文链接</a></p>
+<ul>
+<li><p>变换（Transformation）</p>
+<blockquote>
+<p>UI 只是把数据通过映射关系变换成另一种形式的数据</p>
+</blockquote>
+<p>  说人话：所有UI展现都可以通过变换数据形式来实现。（Virtual DOM）</p>
+</li>
+<li><p>抽象（Abstraction）<br> 组件的由来：UI 可复用的代码片段</p>
+</li>
+<li><p>组合（Composition）<br> 组件嵌套</p>
+  <img src="/alspark/2019/11/24/react-base/components.png" class="" title="组件嵌套">
+</li>
+<li><p>状态（State）</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">  <span class="keyword">super</span>(props);</span><br><span class="line">  <span class="keyword">this</span>.state = &#123;<span class="attr">counter</span>: <span class="number">1</span>&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.setState(<span class="function"><span class="keyword">function</span>(<span class="params">state, props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    counter: state.counter + props.increment</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>Memoization<br>性能优化 React.memo  useMemo</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyComponent</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="comment">/* render using props */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">areEqual</span>(<span class="params">prevProps, nextProps</span>) </span>&#123;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  return true if passing nextProps to render would return</span></span><br><span class="line"><span class="comment">  the same result as passing prevProps to render,</span></span><br><span class="line"><span class="comment">  otherwise return false</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.memo(MyComponent, areEqual);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> memoizedValue = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> computeExpensiveValue(a, b), [a, b]);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>列表（Lists）</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CustomItem =<span class="function">(<span class="params">props</span>)=&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;props.item&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> listItems = numbers.map(<span class="function">(<span class="params">number</span>) =&gt;</span></span><br><span class="line">  &lt;CustomItem key=&#123;number&#125; item=&#123;number&#125;/&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>连续性（Continuations）</p>
+<p>  通过柯里化(高阶函数：就是一个函数返回另一个函数) 实现代码模版<br>  <a href="https://reactjs.org/docs/higher-order-components.html#___gatsby" target="_blank" rel="noopener">英文官网链接</a><br>  <a href="https://zh-hans.reactjs.org/docs/higher-order-components.html#___gatsby" target="_blank" rel="noopener">中文官网链接</a></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">     </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> plusOne = add(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">plusOne(<span class="number">2</span>) <span class="comment">// 3 </span></span><br><span class="line">add(<span class="number">1</span>)(<span class="number">2</span>) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>State Map<br> hooks state代码复用</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CaseList = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [</span><br><span class="line">    isFetching,</span><br><span class="line">    listData,</span><br><span class="line">    getData,</span><br><span class="line">    getListData,</span><br><span class="line">    isEmpty,</span><br><span class="line">    isError,</span><br><span class="line">  ] = useListDataFetch(caseHistoryList, &#123; <span class="attr">pageSize</span>: <span class="number">30</span> &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"case-history-list"</span>&gt;</span><br><span class="line">      &#123;isError &amp;&amp; (</span><br><span class="line">        &lt;NotFound</span><br><span class="line">          text=<span class="string">""</span></span><br><span class="line">          type=&#123;NotFoundType.FAIL_TYPE&#125;</span><br><span class="line">          replayCb=&#123;getListData&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">      &#123;!isError &amp;&amp; listData?.length &gt; <span class="number">0</span> &amp;&amp; (</span><br><span class="line">        &lt;UListView row=&#123;row&#125; list=&#123;listData&#125; getData=&#123;getData&#125; needMore /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">      &#123;isEmpty &amp;&amp; <span class="xml"><span class="tag">&lt;<span class="name">NotFound</span> <span class="attr">text</span>=<span class="string">"暂无历史案例"</span> /&gt;</span>&#125;</span></span><br><span class="line">      &lt;Loading type=&#123;LoadingType.BG_TYPE&#125; visable=&#123;isFetching&#125; fixed /&gt;</span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Memoization Map<br> 同上 Memoization</p>
+</li>
+<li><p>代数效应（Algebraic Effects）<br> context 上下文<br> 说明：嵌套组件多个子组件可以访问的引用；<br> 目的：方便组件数之间参数传递</p>
+</li>
+</ul>
+<hr>
+<h4 id="Virtual-DOM-amp-diff"><a href="#Virtual-DOM-amp-diff" class="headerlink" title="Virtual DOM &amp; diff"></a>Virtual DOM &amp; diff</h4><p>目的：使得 react-dom、 react-native、 react-canvas 、react-XXX 变得无限可能。</p>
+<ul>
+<li><p>分层结构</p>
+<img src="/alspark/2019/11/24/react-base/react-dom.png" class="" title="react-dom">
+</li>
+<li><p>diff </p>
+<img src="/alspark/2019/11/24/react-base/diff.jpg" class="" title="diff">
+
+</li>
+</ul>
+<h4 id="组件-amp-属性"><a href="#组件-amp-属性" class="headerlink" title="组件&amp;属性"></a>组件&amp;属性</h4><p>  <a href="https://reactjs.org/docs/components-and-props.html" target="_blank" rel="noopener">英文链接</a> <a href="https://zh-hans.reactjs.org/docs/components-and-props.html" target="_blank" rel="noopener">中文链接</a></p>
+<ul>
+<li><p>函数组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>类组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>其他分类形式</p>
+<ul>
+<li>无状态 （函数组件、类组件都能实现无状态组件）</li>
+<li>有状态 （类状态组件、useState hooks 可以实现有状态组件）</li>
+</ul>
+</li>
+<li><p>组件渲染</p>
+<blockquote>
+<p>更新 UI 唯一的方式是创建一个全新的元素，并将其传入 ReactDOM.render()；<br>组件更新UI 形式可以通过setState 触发render 来实现。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">"Sara"</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">ReactDOM.render(</span></span><br><span class="line"><span class="xml">  element,</span></span><br><span class="line"><span class="xml">  document.getElementById('root')</span></span><br><span class="line"><span class="xml">);</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>props</p>
+<blockquote>
+<p>Props are Read-Only 属性是只读的<br>组件无论是使用函数声明还是通过 class 声明，都决不能修改自身的 props。</p>
+</blockquote>
+<ul>
+<li>props放什么数据？<ul>
+<li>组件内部不变的数据；</li>
+<li>需要外部传入不可改变的数据（仅UI显示固定值或是作为内部判断逻辑参数）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="state-amp-生命周期"><a href="#state-amp-生命周期" class="headerlink" title="state &amp; 生命周期"></a>state &amp; 生命周期</h4><ul>
+<li>state<br>组件静态不变数据放到props上，组件内动态变化数据放到state里。<br>state 修改后会触发render方法，实现重绘。</li>
+</ul>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;<span class="attr">date</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()&#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        &lt;h2&gt;It is &#123;<span class="keyword">this</span>.state.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意问题：<ul>
+<li>state只能通过setState来修改；</li>
+<li>setState是异步的不会立即修改state值；</li>
+<li>多次调用setState为了提高性能会合并。</li>
+</ul>
+</li>
+<li>生命周期<br>组件在初始化、渲染、销毁等过程中提供的钩子函数，方便做些而外逻辑处理等。<img src="/alspark/2019/11/24/react-base/react-lifecycle.jpeg" class="" title="lifecycle">
+
+</li>
+</ul>
+<h4 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h4><p>  JavaScript 的语法扩展。</p>
+<p>  <a href="https://reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">英文链接</a> <a href="https://zh-hans.reactjs.org/docs/introducing-jsx.html" target="_blank" rel="noopener">中文链接</a></p>
+<p>   JSX 仅仅是 React.createElement(component, props, …children) 函数的语法糖。</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">MyButton</span> <span class="attr">color</span>=<span class="string">"blue"</span> <span class="attr">shadowSize</span>=<span class="string">&#123;2&#125;</span>&gt;</span></span><br><span class="line">  Click Me</span><br><span class="line"><span class="tag">&lt;/<span class="name">MyButton</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">React.createElement(</span><br><span class="line">  MyButton,</span><br><span class="line">  &#123;<span class="attr">color</span>: <span class="string">'blue'</span>, <span class="attr">shadowSize</span>: <span class="number">2</span>&#125;,</span><br><span class="line">  <span class="string">'Click Me'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h4><blockquote>
+<p>react 事件通过统一封 SyntheticEvent 包装器来实现；</p>
+</blockquote>
+<ul>
+<li><p>实现原理(事件代理)</p>
+<p>真实事件绑定在document上，基于浏览器的事件机制（冒泡），交给SyntheticEvent 包装器统一处理。</p>
+</li>
+<li><p>好处：</p>
+<ul>
+<li>减少内存的消耗，提高性能；</li>
+<li>统一规范解决兼容问题；</li>
+</ul>
+</li>
+</ul>
+<p>  <a href="https://reactjs.org/docs/handling-events.html" target="_blank" rel="noopener">英文链接</a> <a href="https://zh-hans.reactjs.org/docs/handling-events.html" target="_blank" rel="noopener">中文链接</a></p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ActionLink</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'The link was clicked.'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;a href=<span class="string">"#"</span> onClick=&#123;handleClick&#125;&gt;</span><br><span class="line">      Click me</span><br><span class="line">    &lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h4><p>  react是“自上而下”的“单向”的数据流。</p>
+<ul>
+<li><p>数据传递<br>任何的 state 总是所属于特定的组件，且从该 state 派生的任何数据或 UI 只能影响树中“低于”它们的组件。<br>说人话：<strong><em>数据只能通过props从父组件传递给子组件，反过来是不行的</em></strong>。</p>
+</li>
+<li><p>父子组件通信方式</p>
+<p>通过props把修改父组件state回调函数传个子组件，来实现修改父组件state，以达到子和父的通信。</p>
+</li>
+</ul>
+
+                    </article>
+                    
+
+
+    <blockquote id="date-expire-notification" class="post-expired-notify">本文最后更新于 <span id="date-expire-num"></span> 天前，文中所描述的信息可能已发生改变</blockquote>
+    <script>
+        var dateUpdate = Date.parse("2019-11-24");
+        var nowDate = new Date();
+        var a = nowDate.getTime();
+        var b = a - dateUpdate;
+        var daysUpdateExpire = Math.floor(b/(24*3600*1000));
+        if (daysUpdateExpire >= 120) {
+            document.getElementById('date-expire-num').innerHTML = daysUpdateExpire;
+        } else {
+            document.getElementById('date-expire-notification').style.display = 'none';
+        }
+    </script>
+
+
+<p class="post-footer-info mb-0 pt-0">本文发表于&nbsp;<time datetime="2019-11-24T04:05:40.000Z" itemprop="datePublished">2019-11-24</time>
+
+</p>
+<p class="post-footer-info mb-0 pt-2">
+
+
+
+
+</p>
+
+                </div>
+                
+<div class="post-nav px-2 bg-gray">
+<ul class="pagination">
+    <!-- Prev Nav -->
+    
+
+    <!-- Next Nav -->
+    
+        <li class="page-item page-next">
+            <a href="/alspark/2019/11/07/flutter-base/" rel="next">
+                <div class="page-item-title"><i class="icon icon-forward" aria-hidden="true"></i></div>
+                <div class="page-item-subtitle">flutter 之基础环境</div>
+            </a>
+        </li>
+    
+</ul>
+</div>
+
+                
+                    <!-- # Comment # -->
+                    
+                        <div class="card-footer post-comment">
+                            <!-- Gitalk Container -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.3.3/dist/gitalk.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.3.3/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            clientID: 'ba5e2f66080546ac5361',
+            clientSecret: '397c2dcabfb2bdb5f66629947ab5c90c4f2ff898',
+            repo: 'alspark',
+            owner: 'lyboy2012',
+            admin: ['lyboy2012'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false,
+            id: window.location.pathname
+        })
+   gitalk.render('gitalk-container')
+</script>
+                        </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+            <!-- ### Footer ### -->
+            <footer class="text-center">
+    <!-- footer copyright -->
+    <p class="footer-copyright mb-0">Copyright&nbsp;©&nbsp;<span data-year></span>
+        <a class="footer-copyright-a" href="https://lyboy2012.github.io/alspark">🔥</a>
+    </p>
+    <!-- footer custom text -->
+    <p class="footer-text mb-0">
+    
+    </p>
+    <!-- footer develop info -->
+    <p class="footer-develop mb-0">
+        
+            
+    <!-- Busuanzi User Views -->
+    <span id="busuanzi_container_site_uv" hidden>
+        <span></span>
+        <span id="busuanzi_value_site_uv"></span>
+        <span>Viewers</span>
+        
+            <span>|</span>
+        
+    </span>
+
+
+
+        
+        
+        Powered by&nbsp;<!--
+         --><a href="https://hexo.io" target="_blank" class="footer-develop-a" rel="external nofollow noopener noreferrer">Hexo</a><span class="footer-develop-divider"></span>Theme&nbsp;-&nbsp;<!--
+         --><a href="https://github.com/SukkaW/hexo-theme-suka" target="_blank" class="footer-develop-a" rel="external noopener">Suka</a>
+    </p>
+</footer>
+
+        
+
+        <!-- ### Import File ### -->
+        <!-- ### Footer JS Import ### -->
+
+<script>
+window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 50
+};
+
+
+
+    /* Copyright */
+    var copyrightNow = new Date().getFullYear();
+    var copyrightContent = document.querySelector('span[data-year]')
+    
+        copyrightContent.textContent = copyrightNow
+    
+
+
+
+/* Cnosole Log */
+console.log('\n %c Suka Theme (hexo-theme-suka) | © SukkaW | Verision 1.3.3 %c https://github.com/SukkaW/hexo-theme-suka \n', 'color: #fff; background: #444; padding:5px 0;', 'background: #bbb; padding:5px 0;');
+</script>
+
+<!-- vanilla-lazyload -->
+
+    <script src="/alspark/lib/vanilla-lazyload/lazyload.min.js" async></script>
+
+
+
+    <!-- Busuanzi -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+
+
+<!-- Offset -->
+
+
+
+
+
+
+
+<!-- gallery.js -->
+
+
+<!-- Comment -->
+
+    
+        <!-- GitTalk -->
+    
+
+
+<!-- ### Custom Footer ### -->
+
+
+    </body>
+
+</html>
